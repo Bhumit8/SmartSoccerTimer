@@ -220,6 +220,7 @@ Calculator Styles
 .close {
     color: #aaa;
     float: right;
+    margin-left: 93%;
     font-size: 28px;
     font-weight: bold;
     z-index: 2;

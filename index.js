@@ -1,3 +1,4 @@
+
 // variables to store hours minutes and seconds of player 1
 var hours = 0;
 var minutes = 0;
@@ -190,4 +191,154 @@ team1DecreaseScoreBtn.addEventListener('click', decreaseScore1);
 team2IncreaseScoreBtn.addEventListener('click', increaseScore2);
 team2DecreaseScoreBtn.addEventListener('click', decreaseScore2);
 
+
+//Section For Calculator pop-up
+// Get the modal
+var modal = document.getElementById("finishModal");
+$('#btnCal').click(function (e) {
+    modal.style.display = "block";
+});
+
+function hideModal() {
+    modal.style.display = "none";
+    $('#finishModal').empty();
+}
+function wrap() {
+    var count = 200;
+    var defaults = {
+        origin: { y: 0.7 }
+    };
+
+    function fire(particleRatio, opts) {
+        confetti(Object.assign({}, defaults, opts, {
+            particleCount: Math.floor(count * particleRatio)
+        }));
+    }
+
+    fire(0.25, {
+        spread: 26,
+        startVelocity: 55,
+    });
+    fire(0.2, {
+        spread: 60,
+    });
+    fire(0.35, {
+        spread: 100,
+        decay: 0.91,
+        scalar: 0.8
+    });
+    fire(0.1, {
+        spread: 120,
+        startVelocity: 25,
+        decay: 0.92,
+        scalar: 1.2
+    });
+    fire(0.1, {
+        spread: 120,
+        startVelocity: 45,
+    });
+}
+
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function () {
+    modal.style.display = "none";
+}
+function score() {
+    $('#modelCon').attr('display', 'none');
+    modal.style.display = "block";
+
+    wrap();
+    $('#finishModal').fireworks();
+    var audio = new Audio('woohoo.mp3');
+    audio.play();
+    destroy();
+
+}
+
+function destroy() {
+    $('#finishModal').fireworks("destroy");
+
+}
+
+
+
+//************************************************Calculator Script************************************************//
+$("#number0").click(function () {
+    dis(0);
+});
+$("#number1").click(function () {
+    dis(1);
+});
+$("#number2").click(function () {
+    dis(2);
+});
+$("#number3").click(function () {
+    dis(3);
+});
+$("#number4").click(function () {
+    dis(4);
+});
+$("#number5").click(function () {
+    dis(5);
+});
+$("#number6").click(function () {
+    dis(6);
+});
+$("#number7").click(function () {
+    dis(7);
+});
+$("#number8").click(function () {
+    dis(8);
+});
+$("#number9").click(function () {
+    dis(9);
+});
+$("#addition").click(function () {
+    dis('+');
+});
+$("#substraction").click(function () {
+    dis('-');
+});
+$("#point").click(function () {
+    dis('.');
+});
+$("#division").click(function () {
+    dis('/');
+});
+$("#multiplication").click(function () {
+    dis('*');
+});
+$("#equal").click(function () {
+    solve();
+});
+$("#clear").click(function () {
+    clr();
+});
+// keypress events for display.
+$(document).keypress(function (e) {
+    var key = e.keyCode || e.charCode;
+    if (key >= 48 && key <= 57) {
+        dis(key - 48);
+    }
+});
+//function that evaluates the digit and return result
+function solve() {
+    let x = document.getElementById("result").value
+    let y = eval(x)
+    document.getElementById("result").value = y
+}
+
+//function that clear the display
+function clr() {
+    document.getElementById("result").value = ""
+}
+
+//calculator script
+function dis(val) {
+    document.getElementById("result").value += val
+}
+
+//************************************************Calculator Script-End************************************************//
 

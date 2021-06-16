@@ -1,0 +1,176 @@
+body{
+    background-image: url('SoccerGround.jpg');
+    background-size: cover;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.durationInputBtn:focus{
+    border: none !important;
+    box-shadow: none;
+}
+
+
+.durationInputBtn{
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-div{
+    border-radius: 0;
+}
+
+@keyframes heartbeat{
+  0% {
+    transform: scale( 1 );
+  }
+  20% {
+    transform: scale( 1.1 );
+  }
+  40% {
+    transform: scale( 1 );
+  }
+  60% {
+    transform: scale( 1.1 );
+  }
+  80% {
+    transform: scale( 1 );
+  }
+  100% {
+    transform: scale( 1 );
+  }
+}
+
+#timer-display{
+    font-family: Arial;
+    font-size: 4rem;
+    color: white;
+    
+}
+
+.heartBeat{
+    animation: heartbeat 1s infinite;
+}
+
+#score-board{
+    background-color: rgb(70,70,70);
+    min-height: 450px;
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    position: relative;
+}
+
+/* #inner-board{
+    background-color: darkslategray;
+    width: 100%;
+    height: 100%;
+} */
+
+#inner-board {
+    background-color: rgb(50,50,50);
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 20px;
+    border-radius: 10px;
+
+}
+
+
+.scores{
+    color: white;
+    font-size: 7rem;
+}
+
+#team1-score{
+    border-right: 2px solid grey;
+    padding-right: 0;
+}
+
+#team2-score{
+    border-left: 2px solid grey;
+    padding-left: 0;
+}
+
+#timer-btns{
+    margin-top: 20px;
+}
+
+.leftScoreBtns{
+    padding-right: 0;
+}
+
+.rightScoreBtns{
+    padding-left: 0;
+}
+
+.increaseScoreBtn{
+    background: transparent;
+    border: none;
+    color: limegreen;
+    font-size: 2rem;
+    transition-duration: 0.07s;
+    margin-right: 10px;
+}
+
+.decreaseScoreBtn{
+    background: transparent;
+    border: none;
+    color: red;
+    font-size: 2rem;
+    transition-duration: 0.07s;
+}
+
+.increaseScoreBtn:focus{
+    outline: none;
+}
+
+.decreaseScoreBtn:focus{
+    outline: none;
+}
+
+.increaseScoreBtn:hover{
+    transform: scale(1.2);
+    color: lime;
+    
+}
+
+.decreaseScoreBtn:hover{
+    transform: scale(1.2);
+    color: rgb(255, 110, 110);
+}
+
+.timeInput{
+    width: 100px;
+}
+
+.teamname{
+    color: white;
+}
+
+#team1-name{
+    padding-right: 0;
+}
+
+#team2-name{
+    padding-left: 0;
+}
+
+.teamNames-input{
+    margin-top: 5px;
+}
+
+.ball-div{
+    position:absolute;
+    top:75%;
+    left:43%;
+    right:44%;
+    bottom: 75%;
+    z-index: -10;
+}

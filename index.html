@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Smart Soccer Timer</title>
+        <link href="css/all.min.css" rel="stylesheet" />
+        <link href="css/fontawesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <div class="container text-center">
+            <button class="btn btn-primary durationInputBtn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Time Duration & Team Names Input  <i class="fas fa-chevron-down pl-2"></i>
+              </button>
+              
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body input-div">
+                    <div id="time-input">
+                        <div id="player-input">
+                            <input class="timeInput" id="duration-hours" type="number" placeholder="Hours" />
+                            <input class="timeInput" id="duration-minutes" type="number" placeholder="Minutes" />
+                            <input class="timeInput" id="duration-seconds" type="number" placeholder="Seconds" />
+                        </div> 
+                    </div>
+                    <hr>
+                    <div class="teamNames-input">
+                        <input class="teamNameInput" id="team1-input" type="text" maxlength="20" placeholder="Team1 Name" />
+                        <input class="teamNameInput" id="team2-input" type="text" maxlength="20" placeholder="Team2 Name" />
+                    </div>
+                </div>
+              </div>
+            
+            <div id="score-board">
+                <div id="inner-board">
+                    <div id="timer-background">
+                        <div id="timer-display">00:00:00</div>
+                    </div>
+                    
+                    <div class="team-names row">
+                        
+                        <div id="team1-name" class="col-sm-6">
+                            <h4 id="team1Name" class="teamname">Team 1 Name</h4>
+                        </div>
+                        <div id="team2-name" class="col-sm-6">
+                            <h4 id="team2Name" class="teamname">Team 2 Name</h4>
+                        </div>
+                    </div>
+
+                    <div class="scores row">
+                        
+                        <div id="team1-score" class="col-sm-6">
+                            00
+                        </div>
+                        <div id="team2-score" class="col-sm-6">
+                            00
+                        </div>
+                    </div>
+
+                    <div class="scoreBtns row">
+                        <div class="col-sm-6 leftScoreBtns">
+                            <button class="increaseScoreBtn fas fa-plus" id="increaseScore1"></button>
+                            <button class="decreaseScoreBtn fas fa-minus" id="decreaseScore1"></button>
+                        </div>
+                        
+                        <div class="col-sm-6 rightScoreBtns">
+                            <button class="increaseScoreBtn fas fa-plus" id="increaseScore2"></button>
+                            <button class="decreaseScoreBtn fas fa-minus" id="decreaseScore2"></button>
+                        </div>
+                    
+                        
+                    </div>
+
+                    <div id="timer-btns">    
+                        <button class="clockBtn" id="start-button">START</button>
+                        <button class="clockBtn" id="set-button">SET CLOCK</button>
+                        <button class="clockBtn" id="stop-button">STOP CLOCK</button>
+                        
+                    </div>
+                </div>
+
+            </div>
+        
+            <div id="errorDiv"></div>
+        </div>
+        
+        <div class="ball-div text-center mt-2">
+            <img src="soccerball.png" width="100">
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="index.js"></script>
+    </body>
+</html>

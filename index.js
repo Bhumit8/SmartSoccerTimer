@@ -316,13 +316,48 @@ $("#equal").click(function () {
 $("#clear").click(function () {
     clr();
 });
+$
+$("#backarrow").click(function (e) {
+    backspaceClear();
+});
+
+
+function backspaceClear() {
+
+    var length = $('#result').val().length;
+    var newResult = "";
+    for (var i = 0; i < length - 1; i++) {
+        newResult = newResult + $('#result').val()[i];
+    }
+    $('#result').val(newResult);
+}
 // keypress events for display.
-$(document).keypress(function (e) {
-    var key = e.keyCode || e.charCode;
-    if (key >= 48 && key <= 57) {
-        dis(key - 48);
+$(document).keydown(function (e) {
+    var key = e.keyCode;
+    if (key >= 96 && key <= 105) {
+        dis(key - 96);
+    }
+    if (key === 107) {
+        dis('+');
+    }
+    if (key === 109) {
+        dis('-');
+    }
+    if (key === 106) {
+        dis('*');
+    }
+    if (key === 111) {
+        dis('/');
+    }
+    if (key === 110) {
+        dis('.');
+    }
+    if (e.keyCode === 8) {
+        backspaceClear();
     }
 });
+
+
 //function that evaluates the digit and return result
 function solve() {
     let x = document.getElementById("result").value

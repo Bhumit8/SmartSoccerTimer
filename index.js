@@ -107,12 +107,19 @@ function enableStartBtn(){
 
 // run timer function for timer
 function runTimer(){
+    var crowdAudio = new Audio('Sounds/FootballCrowd.mp3');
+    crowdAudio.loop = true;
+    crowdAudio.volume = 0.1;
+    crowdAudio.play();
+ 
     if(hours !=0 || minutes != 0 || seconds != 0){
         if(interval == -1){
             interval = setInterval(countDown, 1000);
         } else {
             clearInterval(interval);
             interval = -1;
+            crowdAudio.pause();
+            crowdAudio.currentTime = 0;
         }
     }
 }

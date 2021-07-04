@@ -262,3 +262,12 @@ svg {
 #avatar2-img img{
     width: 4em;
 }
+
+#errorDiv{
+    background-color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    color: red;
+    font-size: 20px;
+    padding: 10px;
+}

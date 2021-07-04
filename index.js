@@ -107,6 +107,7 @@ function enableStartBtn(){
 var crowdAudio = new Audio('Sounds/FootballCrowd.mp3');
 var endWhistle = new Audio('Sounds/EndWhistle.mp3');
 var endSong = new Audio('Sounds/AUFEnding.mp3');
+var goalSound = new Audio('Sounds/GoalSound.mp3');
 endSong.volume = 0.2;
 // run timer function for timer
 function runTimer(){
@@ -157,7 +158,7 @@ function countDown(){
         crowdAudio.currentTime = 0;
         
         endWhistle.play();
-        setInterval(function(){endSong.play()}, 1000);
+        setTimeout(function(){endSong.play()}, 1000);
         clearInterval(interval);
         interval = -1;
         timerEnd = true;
@@ -187,6 +188,8 @@ function stopTimer(){
 
 // sets the chess clock time
 function setClock(){
+    endSong.pause();
+    endSong.currentTime = 0;
     setTeamNames();
     setAvatars();
     timerDisplay.style.color = "white";
@@ -197,9 +200,12 @@ function setClock(){
 
     if(minutesInput < 0 || secondsInput < 0 ||  hoursInput < 0){
         errorDiv.innerText = "Hours, Minutes, or Seconds cannot be less than 0";
+        errorDiv.hidden = false
     } else if(minutesInput > 59 || secondsInput > 59 || hoursInput > 99){
         errorDiv.innerText = 'Hours, Minutes, or Seconds exceed input limit';
+        errorDiv.hidden = false
     } else if(hoursInput != "" && minutesInput != "" && secondsInput != ""){
+        errorDiv.hidden = true;
         errorDiv.innerText = "";
         hours = hoursInput;
         minutes = minutesInput;
@@ -210,6 +216,7 @@ function setClock(){
 
         startBtn.removeAttribute('disabled');
     } else{
+        errorDiv.hidden = false
         errorDiv.innerText = "Please fill all input fields with a duration";
     }
 }
@@ -291,8 +298,7 @@ function score() {
 
     wrap();
     $('#finishModal').fireworks();
-    var audio = new Audio('woohoo.mp3'); // Replace this sound
-    audio.play();
+    goalSound.play();
     destroy();
 
 }

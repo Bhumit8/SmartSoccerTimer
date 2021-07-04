@@ -11,11 +11,12 @@
     <body>
         <div class="container text-center">
             <button class="btn btn-primary durationInputBtn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                Time Duration & Team Names Input  <i class="fas fa-chevron-down pl-2"></i>
+                Timer Setting  <i class="fas fa-chevron-down pl-2"></i>
             </button>
 
             <div class="collapse" id="collapseExample">
                 <div class="card card-body input-div">
+                    <h5>Please enter the time duration</h5>
                     <div id="time-input">
                         <div id="player-input">
                             <input class="timeInput" id="duration-hours" type="number" placeholder="Hours" />
@@ -24,13 +25,16 @@
                         </div>
                     </div>
                     <hr>
+                    <h5>Enter your team names</h5>
                     <div class="teamNames-input">
                         <input class="teamNameInput" id="team1-input" type="text" maxlength="20" placeholder="Team1 Name" />
                         <input class="teamNameInput" id="team2-input" type="text" maxlength="20" placeholder="Team2 Name" />
                     </div>
                     <hr>
+                    <h5>Choose your avatar</h5>
                     <div>
                         <select id="team1-avatar">
+                            <option disabled selected value="KoalaAv">Select Team 1 Avatar</option>
                             <option value="KoalaAv">Koala</option>
                             <option value="Elephant">Elephant</option>
                             <option value="Kangaroo">Kangaroo</option>
@@ -38,6 +42,7 @@
                             <option value="SnakeAv">Snake</option>
                         </select>
                         <select id="team2-avatar">
+                            <option disabled selected value="KoalaAv">Select Team 2 Avatar</option>
                             <option value="KoalaAv">Koala</option>
                             <option value="Elephant">Elephant</option>
                             <option value="Kangaroo">Kangaroo</option>
@@ -101,7 +106,7 @@
 
             </div>
 
-            <div id="errorDiv"></div>
+            <div id="errorDiv" hidden></div>
         </div>
 
         <div class="ball-div text-center mt-2">

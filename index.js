@@ -23,6 +23,9 @@ const team2NameInput = document.getElementById('team2-input');
 const team1Name = document.getElementById('team1Name');
 const team2Name = document.getElementById('team2Name');
 
+const team1AvatarDiv = document.getElementById('avatar1-img');
+const team2AvatarDiv = document.getElementById('avatar2-img');
+
 // selecting the start button
 const startBtn = document.getElementById('start-button');
 startBtn.setAttribute('disabled', 'true');
@@ -251,7 +254,7 @@ function score() {
 
     wrap();
     $('#finishModal').fireworks();
-    var audio = new Audio('woohoo.mp3');
+    var audio = new Audio('woohoo.mp3'); // Replace this sound
     audio.play();
     destroy();
 

@@ -26,6 +26,9 @@ const team2Name = document.getElementById('team2Name');
 const team1AvatarDiv = document.getElementById('avatar1-img');
 const team2AvatarDiv = document.getElementById('avatar2-img');
 
+const team1Avatar = document.getElementById('team1-avatar');
+const team2Avatar = document.getElementById('team2-avatar');
+
 // selecting the start button
 const startBtn = document.getElementById('start-button');
 startBtn.setAttribute('disabled', 'true');
@@ -33,6 +36,10 @@ startBtn.setAttribute('disabled', 'true');
 const setBtn = document.getElementById('set-button');
 const stopBtn = document.getElementById('stop-button');
 
+const team1Image = document.createElement("img");
+const team2Image = document.createElement("img");
+team1AvatarDiv.append(team1Image);
+team2AvatarDiv.append(team2Image);
 var team1ScoreValue = 0;
 
 var team2ScoreValue = 0;
@@ -44,6 +51,15 @@ var timerEnd = false;
 function setTeamNames(){
     team1Name.innerText = team1NameInput.value;
     team2Name.innerText = team2NameInput.value;
+}
+
+function setAvatars(){
+    
+    var avatarName1 = team1Avatar.options[team1Avatar.selectedIndex].value;
+    var avatarName2 = team2Avatar.options[team2Avatar.selectedIndex].value;
+    team1Image.src = "Avatars/"+avatarName1+".png";
+    team2Image.src = "Avatars/"+avatarName2+".png";
+    
 }
 
 function increaseScore1(){
@@ -152,6 +168,7 @@ function stopTimer(){
 // sets the chess clock time
 function setClock(){
     setTeamNames();
+    setAvatars();
     timerDisplay.style.color = "white";
     
     var hoursInput = document.getElementById('duration-hours').value;

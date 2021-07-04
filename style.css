@@ -5,6 +5,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    line-height: 1.2;
 }
 
 .durationInputBtn:focus{
@@ -238,4 +239,10 @@ svg {
     height: 277px;
 }
    
-   
+#avatar1-img img{
+    width: 4em;
+}
+
+#avatar2-img img{
+    width: 4em;
+}

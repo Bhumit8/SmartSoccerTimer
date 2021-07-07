@@ -301,8 +301,11 @@ team2DecreaseScoreBtn.addEventListener('click', decreaseScore2);
 //Section For Calculator pop-up
 // Get the modal
 var modal = document.getElementById("finishModal");
+var modalCon = document.getElementById("modelCon");
+
 $('#btnCal').click(function (e) {
     modal.style.display = "block";
+    modalCon.style.display = "block";
 });
 
 function hideModal() {
@@ -350,23 +353,24 @@ function wrap() {
 var span = document.getElementsByClassName("close")[0];
 span.onclick = function () {
     modal.style.display = "none";
+    modalCon.style.display = "none";
 }
 function score() {
-    $('#modelCon').attr('display', 'none');
-    modal.style.display = "block";
-
     wrap();
-    
-
+    modal.style.display = "block";
     $('#finishModal').fireworks();
     goalSound.play();
     destroy();
+       
+
 
 }
+$('#finishModal').click(function () {
+    modal.style.display = "none";
+});
 
 function destroy() {
     $('#finishModal').fireworks("destroy");
-
 }
 
 

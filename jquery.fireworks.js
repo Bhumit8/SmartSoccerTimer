@@ -1,5 +1,3 @@
-
-
 (function( $ ) {
     var MAX_ROCKETS = 5,
         MAX_PARTICLES = 500;

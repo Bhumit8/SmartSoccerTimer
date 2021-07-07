@@ -356,6 +356,8 @@ function score() {
     modal.style.display = "block";
 
     wrap();
+    
+
     $('#finishModal').fireworks();
     goalSound.play();
     destroy();

@@ -271,3 +271,8 @@ svg {
     font-size: 20px;
     padding: 10px;
 }
+
+.imageInputs{
+    text-align: center;
+    margin-left: 10%;
+  }

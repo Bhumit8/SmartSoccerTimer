@@ -6,6 +6,9 @@ var seconds = 0;
 var milliseconds = 0
 
 // selecting the timer displays
+
+const timerSettingsMenu = document.getElementById('timerSettings');
+
 const timerDisplay = document.getElementById('timer-display');
 
 const team1Score = document.getElementById("team1-score");
@@ -29,6 +32,11 @@ const team2AvatarDiv = document.getElementById('avatar2-img');
 const team1Avatar = document.getElementById('team1-avatar');
 const team2Avatar = document.getElementById('team2-avatar');
 
+const team1File= document.getElementById('imageUpload1');
+const team2File = document.getElementById('imageUpload2');
+
+
+
 // selecting the start button
 const startBtn = document.getElementById('start-button');
 startBtn.setAttribute('disabled', 'true');
@@ -40,6 +48,37 @@ const team1Image = document.createElement("img");
 const team2Image = document.createElement("img");
 team1AvatarDiv.append(team1Image);
 team2AvatarDiv.append(team2Image);
+
+team1File.addEventListener("change", function(){
+    const file = this.files[0];
+    if(file){
+        const reader = new FileReader();
+    
+        reader.addEventListener("load", function(){
+            team1Image.setAttribute("src", this.result);
+        });
+        reader.readAsDataURL(file);
+    } else {
+        team1Image.setAttribute("src", "Avatars/KoalaAv.png")
+    }
+    
+});
+
+team2File.addEventListener("change", function(){
+    const file = this.files[0];
+    if(file){
+        const reader = new FileReader();
+    
+        reader.addEventListener("load", function(){
+            team2Image.setAttribute("src", this.result);
+        });
+        reader.readAsDataURL(file);
+    } else {
+        team2Image.setAttribute("src", "Avatars/KoalaAv.png")
+    }
+    
+});
+
 var team1ScoreValue = 0;
 
 var team2ScoreValue = 0;
@@ -54,12 +93,16 @@ function setTeamNames(){
 }
 
 function setAvatars(){
-    
     var avatarName1 = team1Avatar.options[team1Avatar.selectedIndex].value;
     var avatarName2 = team2Avatar.options[team2Avatar.selectedIndex].value;
-    team1Image.src = "Avatars/"+avatarName1+".png";
-    team2Image.src = "Avatars/"+avatarName2+".png";
-    
+    if(team1File.files.length == 0 && avatarName1 != "none"){
+        
+        team1Image.src = "Avatars/"+avatarName1+".png";
+    }
+    if(team2File.files.length == 0 && avatarName2 != "none"){
+        
+        team2Image.src = "Avatars/"+avatarName2+".png";
+    }  
 }
 
 function increaseScore1(){
@@ -186,8 +229,24 @@ function stopTimer(){
     }
 }
 
+function collapseTimerSettings(){
+    if(timerSettingsMenu.getAttribute("aria-expanded") == "true"){
+        setBtn.setAttribute('data-toggle', 'collapse');
+        setBtn.setAttribute('data-target', '#collapseExample');
+        setBtn.setAttribute('aria-expanded', 'false');
+        setBtn.setAttribute('aria-controls', 'collapseExample')
+    } else {
+        setBtn.removeAttribute('data-toggle');
+        setBtn.removeAttribute('data-target');
+        setBtn.removeAttribute('aria-expanded');
+        setBtn.removeAttribute('aria-controls');
+    }
+    
+}
+
 // sets the chess clock time
 function setClock(){
+    collapseTimerSettings();
     endSong.pause();
     endSong.currentTime = 0;
     setTeamNames();

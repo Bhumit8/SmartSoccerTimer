@@ -2,15 +2,16 @@
 <html>
     <head>
         <title>Smart Soccer Timer</title>
-        <link href="css/all.min.css" rel="stylesheet" />
-        <link href="css/fontawesome.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link href="fontawesome/css/all.min.css" rel="stylesheet" />
+        <link href="fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="bootstrap5/css/bootstrap.css">
         <link rel="stylesheet" href="style.css">
+        
         
     </head>
     <body>
         <div class="container text-center">
-            <button class="btn btn-primary durationInputBtn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            <button id="timerSettings" class="btn btn-primary durationInputBtn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 Timer Setting  <i class="fas fa-chevron-down pl-2"></i>
             </button>
 
@@ -34,7 +35,7 @@
                     <h5>Choose your avatar</h5>
                     <div>
                         <select id="team1-avatar">
-                            <option disabled selected value="KoalaAv">Select Team 1 Avatar</option>
+                            <option disabled selected value="none">Select Team 1 Avatar</option>
                             <option value="KoalaAv">Koala</option>
                             <option value="Elephantt">Elephant</option>
                             <option value="Kangaroo">Kangaroo</option>
@@ -42,7 +43,7 @@
                             <option value="SnakeAv">Snake</option>
                         </select>
                         <select id="team2-avatar">
-                            <option disabled selected value="KoalaAv">Select Team 2 Avatar</option>
+                            <option disabled selected value="none">Select Team 2 Avatar</option>
                             <option value="KoalaAv">Koala</option>
                             <option value="Elephantt">Elephant</option>
                             <option value="Kangaroo">Kangaroo</option>
@@ -50,6 +51,13 @@
                             <option value="SnakeAv">Snake</option>
                         </select>
                     </div>
+                    <hr>
+                    <h5>Upload your own avatar image:</h5>
+                    <div class="imageInputs">
+                        <input type="file" id="imageUpload1" accept="image/*">
+                        <input type="file" id="imageUpload2" accept="image/*">
+                    </div>
+                    
                 </div>
             </div>
 
@@ -225,12 +233,13 @@
                 </div>
 
             </div>
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+            
+            <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
+            <script src="jquery3.6.0.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
             <script src="jquery.fireworks.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+            <script src="bootstrap5/js/bootstrap.js"></script>
             <script src="index.js"></script>
 </body>
 </html>

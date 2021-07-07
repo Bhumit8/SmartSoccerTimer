@@ -366,7 +366,10 @@ function score() {
 
 }
 $('#finishModal').click(function () {
-    modal.style.display = "none";
+    if (modalCon.style.display == "none") {
+        modal.style.display = "none";
+    }
+   
 });
 
 function destroy() {
